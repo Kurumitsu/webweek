@@ -34,20 +34,45 @@ function handleScrollVisibility() {
  * Fonction d'initialisation (setup) appelée au chargement du DOM
  */
 function init() {
-    // Récupération de l'élément dans le DOM [cite: 708, 1206]
+    // Récupération de l'élément dans le DOM
     btnScroll = document.getElementById("scrollToTop");
 
-    // Vérification de sécurité pour éviter les erreurs console [cite: 721, 723]
+    // Vérification de sécurité pour éviter les erreurs console
     if (btnScroll) {
-        // Abonnement au clic sur le bouton [cite: 709, 1000]
-        btnScroll.addEventListener("click", actionScrollTop);
+        // Logique pour afficher/masquer le bouton "Remonter"
+        const currentPage = window.location.pathname.toLowerCase();
+        const isMobile = window.innerWidth <= 768; // Détection version téléphone
+        const isIndexOrAdopter = currentPage.includes("index.html") || currentPage.includes("adopter.html") || currentPage.endsWith("/");
+        const isConnexion = currentPage.includes("connexion.html");
         
-        // Abonnement au scroll de la fenêtre pour afficher/masquer le bouton
-        window.addEventListener("scroll", handleScrollVisibility);
+        // Masquer le bouton si:
+        // - On n'est pas sur index.html ou adopter.html (sauf si version mobile)
+        // - On est sur connexion.html ET version mobile
+        if ((!isIndexOrAdopter && !isMobile) || (isConnexion && isMobile)) {
+            btnScroll.style.display = "none";
+        } else {
+            // Abonnement au clic sur le bouton
+            btnScroll.addEventListener("click", actionScrollTop);
+            
+            // Abonnement au scroll de la fenêtre pour afficher/masquer le bouton
+            window.addEventListener("scroll", handleScrollVisibility);
+        }
+    }
+
+    // Masquer le bouton "Don" sur la page aider.html
+    const btnDon = document.getElementById("btn-don");
+    if (btnDon) {
+        // Vérifier si la page actuelle est aider.html
+        const currentPageForDon = window.location.pathname.toLowerCase();
+        if (currentPageForDon.includes("aider.html")) {
+            btnDon.style.display = "none !important";
+            btnDon.style.visibility = "hidden";
+            btnDon.style.pointerEvents = "none";
+        }
     }
 }
 
 /*--
-    Attente du chargement complet du DOM avant exécution [cite: 1170, 1432]
+    Attente du chargement complet du DOM avant exécution
 --*/
 window.addEventListener("load", init);

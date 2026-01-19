@@ -1019,9 +1019,7 @@ textarea:focus {
   .action-group { flex-direction: column; gap: 20px; }
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 footer {
   background-color: var(--green-dark);
   padding: 20px 2%;
@@ -1074,4 +1072,69 @@ footer {
 @media (max-width: 768px) {
   .facebook-link { font-size: 1.3rem; }
   .legal-link { font-size: 0.75rem; }
+}
+
+/* SCROLL Bouton remonter */
+.scroll-to-top {
+  position: fixed;
+  bottom: 95px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #ab8a60;
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 99;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--white);
+  color: #ab8a60;
+  transform: translateY(-3px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* DON BUTTON */
+.btn-don {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 25px;
+  background-color: #ab8a60;
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  z-index: 98;
+}
+
+.btn-don:hover {
+  background-color: var(--white);
+  color: #ab8a60;
+  transform: translateY(-3px);
+}
+
+/* Masquer le bouton Don sur aider.html */
+.btn-don[href="aider.html"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }

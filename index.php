@@ -98,8 +98,9 @@
 
             </div>
         </section>
+        <div class="bouton_fixe">
             <button id="scrollToTop" class="scroll-to-top">↑</button>
-            <a href="don.php" class="btn-don">Faire un don</a>
+            <a href="don.php" id="scrollToTop">Faire un don</a>
     </main>
 
 <?php 

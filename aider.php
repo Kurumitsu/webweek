@@ -1,44 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nous aider</title>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js"></script>
-    <link rel="icon" href="images/Favicon.png" type="image/svg+xml">
-</head>
-
+    <?php 
+  include('header et footer/head.php'); 
+?>
 <body>
-    <header>
-        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-
-        <label for="menu-toggle" class="burger-menu">
-            <span></span><span></span><span></span>
-        </label>
-
-        <div class="logo">
-            <a href="index.html"><img src="images/Logo-1.webp" alt="Logo SPA Haute-Loire"></a>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="adopter.html">Adopter</a></li>
-                <li><a href="aider.html">Nous aider</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="boutique.html">Boutique</a></li>
-            </ul>
-        </nav>
-
-        <div class="user-access">
-            <a href="connexion.html">
-                <img src="images/connexion.webp" alt="Icône utilisateur">
-                </svg>
-            </a>
-        </div>
-    </header>
+    <?php 
+    include('header et footer/header.php'); 
+    ?>
     <main>
         <section class="banniere-aider">
             <div class="banniere-aider__overlay">
@@ -50,7 +18,8 @@
                     </p>
                 </div>
                 <div class="banniere-aider__actions">
-                    <a href="/images/PDF Adhésion.pdf" class="btn-adhesion">Adhérer</a>
+                    <a href="don.php" class="btn-don">Faire un don</a>
+                    <a href="images/Adhesion.pdf" class="btn-adhesion">Adhérer</a>
                 </div>
             </div>
             </div>
@@ -74,13 +43,13 @@
             <div class="section-partenaires__carousel">
                 <!-- Logos de partenaires -->
                 <div class="partenaire-card">
-                    <img src="images/partenaires/Logo_Auvergne-Rhône-Alpes.svg" alt="Partenaire 1">
+                    <img src="images/partenaires/Logo_Auvergne-Rhone-Alpes.svg" alt="Partenaire 1">
                 </div>
                 <div class="partenaire-card">
                     <img src="images/partenaires/Logo_Haute_Loire_2014.svg" alt="Partenaire 2">
                 </div>
                 <div class="partenaire-card">
-                    <img src="images/partenaires/LogoCommunautéd'agglomérationduPuy-en-Velay.webp" alt="Partenaire 3">
+                    <img src="images/partenaires/LogoCommunaute_d'agglomeration_du_Puy-en-Velay.webp" alt="Partenaire 3">
                 </div>
                 <div class="partenaire-card">
                     <img src="images/partenaires/LePuy-en-VelayLogo.webp" alt="Partenaire 4">
@@ -111,18 +80,10 @@
         </section>
 
     </main>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <a href="https://www.facebook.com/people/SPA-de-la-Haute-Loire/100064272296018/" target="_blank"
-                    class="facebook-link">Facebook</a>
-            </div>
+    <?php 
+        include('header et footer/footer.php'); 
+    ?>
 
-            <div class="footer-right">
-                <a href="mentions-legales.html" class="legal-link">Mentions Légales</a>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>

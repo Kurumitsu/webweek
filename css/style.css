@@ -191,16 +191,25 @@ nav a {
 
 /* Navigation Desktop */
 @media screen and (min-width: 768px) {
-  .burger-menu { display: none; }
-  
-  .logo, .user-access {
+  .burger-menu {
+    display: none;
+  }
+
+  .logo,
+  .user-access {
     flex: 1;
     order: unset;
   }
-  
-  .logo { justify-content: flex-start; }
-  .logo img { height: 65px; }
-  .user-access { justify-content: flex-end; }
+
+  .logo {
+    justify-content: flex-start;
+  }
+  .logo img {
+    height: 65px;
+  }
+  .user-access {
+    justify-content: flex-end;
+  }
 
   nav {
     position: static;
@@ -237,12 +246,16 @@ nav a {
     transform: translateX(-50%);
   }
 
-  nav a:hover::after { width: 100%; }
+  nav a:hover::after {
+    width: 100%;
+  }
 }
 
 /* Version Desktop Alternative (Nav Links) */
 @media screen and (min-width: 1024px) {
-  .burger { display: none; }
+  .burger {
+    display: none;
+  }
   .nav-links {
     display: flex;
     list-style: none;
@@ -323,29 +336,74 @@ nav a {
   color: var(--yellow-light);
 }
 
+/* --- Carrousel --- */
 .carousel-container {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  background-color: var(--yellow-normal);
-  overflow: hidden;
-  border-radius: 12px;
+    position: relative;
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px; 
 }
 
 .carousel-track {
-  display: flex;
-  height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  min-width: 100%;
-  height: 100%;
+    min-width: 100%;
 }
 
 .carousel-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-position: center; 
+}
+
+/* Boutons Précédent / Suivant */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 5;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.next { right: 0; }
+.prev { left: 0; }
+
+/* Points de navigation */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 0;
+}
+
+.nav-dot {
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-dot.active {
+    background: #333; 
 }
 
 @media (min-width: 992px) {
@@ -384,7 +442,7 @@ nav a {
   max-width: 800px;
   margin: 0 auto;
   color: var(--yellow-light);
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .contact-form h3 {
@@ -440,7 +498,9 @@ nav a {
     flex-direction: column;
     align-items: center;
   }
-  .map-box { width: 100%; }
+  .map-box {
+    width: 100%;
+  }
 }
 
 /* =========================
@@ -491,13 +551,23 @@ nav a {
 }
 
 @media (min-width: 768px) {
-  .partenaire-card { min-width: 200px; padding: 20px; }
-  .section-partenaires__title { font-size: 2rem; }
+  .partenaire-card {
+    min-width: 200px;
+    padding: 20px;
+  }
+  .section-partenaires__title {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
-  .partenaire-card { min-width: 220px; padding: 25px; }
-  .section-partenaires__title { font-size: 2.4rem; }
+  .partenaire-card {
+    min-width: 220px;
+    padding: 25px;
+  }
+  .section-partenaires__title {
+    font-size: 2.4rem;
+  }
 }
 
 /* =========================
@@ -529,7 +599,9 @@ nav a {
   overflow: hidden;
   text-align: center;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
   aspect-ratio: 1/1;
   position: relative;
   cursor: pointer;
@@ -553,7 +625,11 @@ nav a {
   padding: 1rem;
   box-sizing: border-box;
   color: #fff;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 60%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.55) 60%
+  );
   transform: translateY(100%);
   transition: transform 220ms ease;
   display: flex;
@@ -584,7 +660,9 @@ nav a {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 180ms ease, max-height 180ms ease;
+  transition:
+    opacity 180ms ease,
+    max-height 180ms ease;
 }
 
 /* États interactifs */
@@ -612,18 +690,185 @@ nav a {
 }
 
 @media (max-width: 800px) {
-  .gallery { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; }
-  .product-gallery { padding: 1rem; }
-  .product-card { max-width: 280px; border-radius: 8px; }
-  .product-card .info { padding: 0.75rem; }
-  .product-gallery h2 { font-size: 1.25rem; }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+  .product-gallery {
+    padding: 1rem;
+  }
+  .product-card {
+    max-width: 280px;
+    border-radius: 8px;
+  }
+  .product-card .info {
+    padding: 0.75rem;
+  }
+  .product-gallery h2 {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .gallery { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.6rem; }
-  .product-card { max-width: 220px; }
-  .product-card .info h3 { font-size: 0.95rem; }
-  .product-card .info .desc { font-size: 0.85rem; }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.6rem;
+  }
+  .product-card {
+    max-width: 220px;
+  }
+  .product-card .info h3 {
+    font-size: 0.95rem;
+  }
+  .product-card .info .desc {
+    font-size: 0.85rem;
+  }
+}
+/* =========================
+   PAGE : ADMIN
+   ========================= */
+.admin-main {
+  width: 100%;
+  padding: 40px 5%;
+  box-sizing: border-box;
+  align-content: center;
+}
+
+.admin-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  gap: 30px;
+}
+
+.title-section h1,
+.admin-subtitle,
+.animal-name,
+.animal-specie,
+.edit-btn {
+  color: #4f402d;
+}
+
+.title-section h1 {
+  font:
+    800 32px "Urbanist",
+    sans-serif;
+  margin: 0;
+}
+.admin-subtitle {
+  font-size: 1.1rem;
+  margin: 10px 0 25px;
+  opacity: 0.8;
+}
+
+/* --- liste des aniaux--- */
+.admin-table {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.animal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(79, 64, 45, 0.1);
+}
+
+.animal-row:last-child {
+  border-bottom: none;
+}
+
+.animal-thumb {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #4f402d;
+  margin-right: 15px;
+}
+
+.animal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.animal-info {
+  display: flex;
+  flex-direction: column;
+}
+.animal-name {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.animal-specie {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.login-button {
+  background-color: #ab8a60;
+  color: #fff;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font:
+    700 18px "Urbanist",
+    sans-serif;
+  cursor: pointer;
+}
+
+.action-group {
+  display: flex;
+  gap: 15px;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  font:
+    700 0.9rem "Urbanist",
+    sans-serif;
+  cursor: pointer;
+}
+
+.edit-btn {
+  color: #ab8a60;
+}
+.delete-btn {
+  color: #a04040;
+}
+
+/* ---responsive --- */
+@media screen and (min-width: 768px) {
+  .admin-wrapper {
+    flex-direction: row;
+    gap: 80px;
+    align-items: flex-start;
+  }
+  .title-section,
+  .form-section {
+    flex: 1;
+  }
+  .title-section h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .animal-row {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .action-group {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
 
 /* =========================
@@ -675,28 +920,48 @@ nav a {
   text-decoration: none;
 }
 
-.btn-don, .btn-adhesion {
+.btn-don,
+.btn-adhesion {
   background-color: #ab8a60;
   color: #fff;
 }
 
-.btn-don:hover, .btn-adhesion:hover {
+.btn-don:hover,
+.btn-adhesion:hover {
   background-color: #fff;
   color: #ab8a60;
 }
 
 @media (min-width: 768px) {
-  .banniere-aider { min-height: 60vh; }
-  .banniere-aider__overlay { padding: 40px 10%; }
-  .banniere-aider__contenu h1 { font-size: 2.4rem; }
-  .banniere-aider__actions { position: absolute; bottom: 15px; right: 15px; }
+  .banniere-aider {
+    min-height: 60vh;
+  }
+  .banniere-aider__overlay {
+    padding: 40px 10%;
+  }
+  .banniere-aider__contenu h1 {
+    font-size: 2.4rem;
+  }
+  .banniere-aider__actions {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
 }
 
 @media (min-width: 1024px) {
-  .banniere-aider { min-height: 80vh; }
-  .banniere-aider__overlay { padding: 80px 10%; }
-  .banniere-aider__contenu { max-width: 700px; }
-  .banniere-aider__contenu h1 { font-size: 3rem; }
+  .banniere-aider {
+    min-height: 80vh;
+  }
+  .banniere-aider__overlay {
+    padding: 80px 10%;
+  }
+  .banniere-aider__contenu {
+    max-width: 700px;
+  }
+  .banniere-aider__contenu h1 {
+    font-size: 3rem;
+  }
 }
 
 /* Bénévolat */
@@ -749,8 +1014,14 @@ nav a {
 }
 
 @media (min-width: 768px) {
-  .section-benevolat__cards { flex-direction: row; gap: 30px; text-align: left; }
-  .section-benevolat__card { width: 45%; }
+  .section-benevolat__cards {
+    flex-direction: row;
+    gap: 30px;
+    text-align: left;
+  }
+  .section-benevolat__card {
+    width: 45%;
+  }
 }
 
 /* Timeline, Filtres et Animaux */
@@ -759,7 +1030,9 @@ nav a {
   text-align: center;
 }
 
-.dashed-box { padding: 20px; }
+.dashed-box {
+  padding: 20px;
+}
 
 .timeline-section {
   display: flex;
@@ -838,7 +1111,20 @@ nav a {
   margin-top: 10px;
   font-weight: 700;
 }
-
+.animal-card-indisponible {
+  opacity: 0.6;
+  width: 48%;
+  margin-bottom: 25px;
+}
+.animal-card-indisponible img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.animal-card-indisponible h3 {
+  margin-top: 10px;
+  font-weight: 700;
+}
 /* Responsive Adopter */
 @media screen and (min-width: 992px) {
   .timeline-section {
@@ -847,17 +1133,33 @@ nav a {
     gap: 30px;
     padding: 40px 10%;
   }
-  .timeline-card { flex: 1; max-width: 350px; }
+  .timeline-card {
+    flex: 1;
+    max-width: 350px;
+  }
   .filters-section {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 20px 5%;
   }
-  .filter-item { border: none; flex: 1; }
-  .filter-item summary { justify-content: center; gap: 10px; }
-  .animal-card { width: 30%; }
-  .animal-grid { padding: 40px 10%; }
+  .filter-item {
+    border: none;
+    flex: 1;
+  }
+  .filter-item summary {
+    justify-content: center;
+    gap: 10px;
+  }
+  .animal-card-indisponible {
+    width: 30%;
+  }
+  .animal-card  {
+    width: 30%;
+  }
+  .animal-grid {
+    padding: 40px 10%;
+  }
 }
 
 /* =========================
@@ -909,13 +1211,16 @@ textarea:focus {
 }
 
 /* Boutons communs formulaires */
-.login-button, .valider-btn {
+.login-button,
+.valider-btn {
   background-color: #ab8a60;
   color: #fff;
   border: none;
   padding: 12px 60px;
   border-radius: 50px;
-  font: 700 20px "Urbanist", sans-serif;
+  font:
+    700 20px "Urbanist",
+    sans-serif;
   cursor: pointer;
 }
 
@@ -970,8 +1275,6 @@ textarea:focus {
 /* Page Don */
 .don-hero {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1006,17 +1309,33 @@ textarea:focus {
     gap: 100px;
     align-items: center;
   }
-  .title-section, .form-section { flex: 1; }
-  .connexion-wrapper h1, .don-hero h1 { font-size: 48px; }
+  .title-section,
+  .form-section {
+    flex: 1;
+  }
+  .connexion-wrapper h1,
+  .don-hero h1 {
+    font-size: 48px;
+  }
 }
 
 @media (max-width: 768px) {
-  .form-row { flex-direction: column; gap: 0; }
-  .login-button, .valider-btn { width: 100%; padding: 12px 20px; }
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .login-button,
+  .valider-btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
 }
 
 @media (max-width: 480px) {
-  .action-group { flex-direction: column; gap: 20px; }
+  .action-group {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 /* =========================
@@ -1072,8 +1391,12 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .facebook-link { font-size: 1.3rem; }
-  .legal-link { font-size: 0.75rem; }
+  .facebook-link {
+    font-size: 1.3rem;
+  }
+  .legal-link {
+    font-size: 0.75rem;
+  }
 }
 
 /* Stylisation du bouton Remonter */
@@ -1092,7 +1415,57 @@ footer {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+  z-index: 99;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--brown-text);
+  transform: translateY(-3px);
+  transition: all 0.3s ease-in-out;
+}
+.bouton_fixe{
+  position: fixed;
+  right : 20px;
+  bottom : 20px;
+}
+
+.bouton_fixe a{
+  background-color: #ab8a60;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.bouton_fixe a:hover {
+  background-color: var(--brown-text);
+  transform: translateY(-3px);
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-to-top {
+  width: 50px;
+  height: 50px;
+  background-color: #ab8a60;
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
   z-index: 99;
 }
 

@@ -1,75 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPA Haute-Loire</title>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js"></script>
-
-</head>
-
+    <?php 
+  include('header et footer/head.php'); 
+?>
 <body>
-    <header>
-        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-
-        <label for="menu-toggle" class="burger-menu">
-            <span></span><span></span><span></span>
-        </label>
-
-        <div class="logo">
-            <a href="index.html"><img src="images/Logo-1.webp" alt="Logo SPA Haute-Loire"></a>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a href="adopter.html">Adopter</a></li>
-                <li><a href="aider.html">Nous aider</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="boutique.html">Boutique</a></li>
-            </ul>
-        </nav>
-
-        <div class="user-access">
-            <a href="connexion.html">
-                <img src="images/connexion.webp" alt="Icône utilisateur">
-            </a>
-        </div>
-    </header>
-
+<?php 
+  include('header et footer/header.php'); 
+?>
     <main>
         <section class="hero">
             <video autoplay muted loop playsinline id="hero-video" poster="fallback-image.jpg">
-                <source src="vidéo/videobanieres.mp4" type="video/mp4">
+                <source src="vidéo/videobanieres.webm" type="video/webm">
             </video>
             <div class="hero-content">
                 <h1>La SPA de la Haute-Loire vous souhaite la bienvenue !</h1>
                 <h3>Nous vous accueillons du Lundi au Samedi, de 13h30 à 17h30.</h3>
-                <a href="#" class="btn-hero">J'adopte</a>
+                <a href="adopter.php" class="btn-hero">J'adopte</a>
             </div>
         </section>
 
         <section class="section-carousel">
-            <div class="container carousel-layout">
+    <div class="container carousel-layout">
+        
+        <div id="main-carousel" class="carousel-container">
+            <button class="carousel-btn prev" aria-label="Précédent">❮</button>
+            <button class="carousel-btn next" aria-label="Suivant">❯</button>
 
-                <div id="main-carousel" class="carousel-container">
-                    <div class="carousel-track">
-                        <div class="carousel-item"><img src="animal1.jpg" alt=""></div>
-                        <div class="carousel-item"><img src="animal2.jpg" alt=""></div>
-                        <div class="carousel-item"><img src="animal3.jpg" alt=""></div>
-                    </div>
-
-                    <div class="carousel-nav"></div>
-                </div>
-
-                <div class="carousel-text">
-                    <h2>Leur futur commence par votre visite : découvrez-les tous.</h2>
-                </div>
-
+            <div class="carousel-track">
+               
+                <div class="carousel-item"><img src="images/carousel_index/Banniere1.webp" alt=""></div>
+                <div class="carousel-item"><img src="images/carousel_index/Banniere2.webp" alt=""></div>
+                <div class="carousel-item"><img src="images/carousel_index/Banniere3.webp" alt=""></div>
             </div>
-        </section>
+            
+            <div class="carousel-nav"></div>
+        </div>
+
+        <div class="carousel-text">
+            <h2>Leur futur commence par votre visite : découvrez-les tous.</h2>
+        </div>
+        
+    </div>
+</section>
         <section class="section-about">
             <div class="container">
                 <h3>A Propos de nous</h3>
@@ -130,22 +102,15 @@
 
             </div>
         </section>
+        <div class="bouton_fixe">
         <button id="scrollToTop" class="scroll-to-top">↑</button>
+        <a href="don.php" id="bouton_don">Faire un don</a>
+    </div>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <a href="https://www.facebook.com/people/SPA-de-la-Haute-Loire/100064272296018/" target="_blank"
-                    class="facebook-link">Facebook</a>
-            </div>
-
-            <div class="footer-right">
-                <a href="mentions-legales.html" class="legal-link">Mentions Légales</a>
-            </div>
-        </div>
-    </footer>
-
+<?php 
+  include('header et footer/footer.php'); 
+?>
 </body>
 
 </html>
